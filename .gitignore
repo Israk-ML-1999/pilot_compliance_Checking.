@@ -29,6 +29,9 @@ coverage.xml
 *.sqlite3
 *.db
 
+# ChromaDB
+chroma_db_data/
+
 # Jupyter
 .ipynb_checkpoints/
 
