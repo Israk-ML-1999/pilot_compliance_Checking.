@@ -108,8 +108,8 @@ async def analyze_compliance(query_text: str = None, uploaded_files: List[Dict[s
     # Scenario A: We have Schedule Data -> Return JSON Report
     if extracted_schedule_data:
         final_prompt = f"""
-        You are a Senior Aviation Compliance Officer.carefully check the schedule and rules to identify any violations and also use you RAG *KNOWLEDGE BASED*.        
-        **OFFICIAL RULES (Context):**
+        You are a Senior Aviation Compliance Officer.carefully check the schedule and rules to identify any violations also Alcohal and Drug test.        
+        **OFFICIAL RULES (Context):**.Always check (Context) to identify any violations with reference to rules where break the rules. provide every ans you must the check *(Context) OFFICIAL RULES*
         {rules_context}
         
         **EXTRACTED SCHEDULE (Analyzed Data):**
