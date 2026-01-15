@@ -7,7 +7,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: Willmo
+    container_name: pilot_compliance_app
     expose:
       - '8000'
     env_file:
@@ -15,17 +15,17 @@ services:
     networks:
       - app-network
     volumes:
-      - ./audio:/app/audio  # Mount audio folder in app container
+      - ./chroma_db_data:/app/chroma_db_data
+      - ./temp_uploads:/app/temp_uploads
 
   nginx:
     image: nginx:alpine
-    container_name: nginx_proxy_willmo
+    container_name: nginx_proxy_pilot_compliance
     ports:
       - '0.0.0.0:8089:80'
     networks:
       - app-network
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
-      - ./audio:/app/audio
     depends_on:
       - app

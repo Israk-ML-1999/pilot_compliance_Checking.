@@ -9,3 +9,5 @@ langchain-chroma
 langchain-cohere
 langchain-google-genai
 chromadb
+certifi
+httpx[http2]
