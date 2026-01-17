@@ -24,6 +24,11 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy application code
 COPY . /app/
 
+# Create volume directories with proper permissions
+# This ensures the container can write to these directories even on VPS
+RUN mkdir -p /app/chroma_db_data /app/temp_uploads && \
+    chmod -R 777 /app/chroma_db_data /app/temp_uploads
+
 # Expose port
 EXPOSE 8000
 

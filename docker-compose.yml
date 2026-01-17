@@ -22,7 +22,7 @@ services:
     image: nginx:alpine
     container_name: nginx_proxy_pilot_compliance
     ports:
-      - '0.0.0.0:8089:80'
+      - '0.0.0.0:8099:80'
     networks:
       - app-network
     volumes:

@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 from app.checking_complience.router import router as compliance_router
 from app.Dtat_extrasion.router import router as extraction_router
+from config import settings
+import os
 
 app = FastAPI(title="Pilot Compliance AI System")
 

@@ -22,10 +22,10 @@ llm_reasoning = ChatGoogleGenerativeAI(
 
 def get_vector_store():
     return Chroma(
-        persist_directory=settings.CHROMA_DB_DIR,
-        embedding_function=embeddings,
-        collection_name="pilot_rules"
-    )
+            persist_directory=settings.CHROMA_DB_DIR,
+            embedding_function=embeddings,
+            collection_name="pilot_rules"
+        )
 
 async def analyze_compliance(query_text: str = None, uploaded_files: List[Dict[str, Any]] = None):
     vectorstore = get_vector_store()
